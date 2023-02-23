@@ -1,0 +1,6 @@
+[user]
+	signingkey = ACF4771B92E63BC5
+	name = Anil Oli <aniloli42>
+	email = 44222164+aniloli42@users.noreply.github.com
+[commit]
+	gpgsign = true

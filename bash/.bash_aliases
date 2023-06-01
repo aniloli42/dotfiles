@@ -2,6 +2,7 @@
 alias ll='ls -alF'
 alias la='ls -A'
 alias l='ls -CF'
+alias rf='rm -rf'
 
 # Git Aliases
 alias gs='git status'

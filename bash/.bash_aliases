@@ -7,6 +7,7 @@ alias rf='rm -rf'
 # Git Aliases
 alias gs='git status'
 alias gc='git commit -m'
+alias gcan="git commit --amend --no-edit"
 alias gsc='git commit -S -m'
 alias gl='git log'
 alias g1='git log --oneline'
@@ -15,4 +16,7 @@ alias gp='git pull'
 alias ga='git add'
 alias gaa='git add -A'
 alias gb='git reset HEAD^'
-alias gpo='git push'
+alias gpo='git push origin "$(git branch --show-current)"'
+
+# Bash
+alias sb="source ~/.bashrc"

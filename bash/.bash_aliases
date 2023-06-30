@@ -26,6 +26,9 @@ alias mconf="xrandr --output eDP --mode 1920x1080 --rate 60 --primary --output H
 
 # Docker
 alias d="docker"
+alias di="docker images"
+alias dps="docker ps"
+alias dpa="docker ps -a"
 alias dc="docker-compose"
 alias dcb="docker-compose build"
 alias dcd="docker-compose down"

@@ -20,3 +20,14 @@ alias gpo='git push origin "$(git branch --show-current)"'
 
 # Bash
 alias sb="source ~/.bashrc"
+
+# Montior Conf
+alias mconf="xrandr --output eDP --mode 1920x1080 --rate 60 --primary --output HDMI-A-0 --mode 1920x1080 --rate 75 --left-of eDP"
+
+# Docker
+alias d="docker"
+alias dc="docker-compose"
+alias dcb="docker-compose build"
+alias dcd="docker-compose down"
+alias dcr="docker-compose run"
+alias dcrb="docker-compose run --build"

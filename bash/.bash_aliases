@@ -1,7 +1,6 @@
 # Listing Aliases
 alias ll='ls -alF'
-alias la='ls -A'
-alias l='ls -CF'
+alias l='ls -a'
 alias rf='rm -rf'
 
 # Git Aliases

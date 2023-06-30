@@ -3,6 +3,8 @@ alias ll='ls -alF'
 alias l='ls -a'
 alias rf='rm -rf'
 
+alias c='clear'
+
 # Git Aliases
 alias gs='git status'
 alias gc='git commit -m'

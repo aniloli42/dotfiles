@@ -5,7 +5,6 @@ pcall(require, "luarocks.loader")
 
 -- Standard awesome library
 local gears = require("gears")
-local awful = require("awful")
 require("awful.autofocus")
 
 -- Theme handling library
@@ -19,7 +18,7 @@ local naughty = require("naughty")
 naughty.connect_signal("request::display_error", function(message, startup)
     naughty.notification {
         urgency = "critical",
-        title   = "Oops, an error happened"..(startup and " during startup!" or "!"),
+        title   = "Oops, an error happened" .. (startup and " during startup!" or "!"),
         message = message
     }
 end)
@@ -45,11 +44,11 @@ modkey = "Mod4"
 -- {{{ imports
 
 -- autostart
-    -- configs: autostart, keybinds, rules, theme, wallpaper
-    require("config")
+-- configs: autostart, keybinds, rules, theme, wallpaper
+require("config")
 
-    -- uis: menu, notifications, wallpaper, wibar, titlebars
-    require("ui")
+-- uis: menu, notifications, wallpaper, wibar, titlebars
+require("ui")
 
 -- }})
 

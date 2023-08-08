@@ -1,0 +1,28 @@
+import:
+  - ~/.config/alacritty/themes/nord.yaml
+
+font:
+  normal:
+    family: Source Code Pro
+    style: Regular
+
+  bold:
+    family: Source Code Pro
+    style: Bold
+
+  italic:
+    family: Source Code Pro
+    style: Italic
+
+  bold_italic:
+    family: Source Code Pro
+    style: Bold Italic
+
+  size: 11
+
+window:
+  dynamic_title: true
+  opacity: 0.95
+
+selection:
+  save_to_clipboard: true

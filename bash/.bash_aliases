@@ -23,7 +23,7 @@ alias gpo='git push origin "$(git branch --show-current)"'
 alias sb="source ~/.bashrc"
 
 # Montior Conf
-alias mconf="xrandr --output eDP --mode 1920x1080 --rate 60 --primary --output HDMI-A-0 --mode 1920x1080 --rate 75 --left-of eDP"
+alias mconf="xrandr --output eDP-1 --mode 1920x1080 --rate 60 --primary --output HDMI-1 --mode 1920x1080 --rate 75 --left-of eDP-1"
 
 # Docker
 alias d="docker"
@@ -33,5 +33,5 @@ alias dpa="docker ps -a"
 alias dc="docker-compose"
 alias dcb="docker-compose build"
 alias dcd="docker-compose down"
-alias dcr="docker-compose run"
-alias dcrb="docker-compose run --build"
+alias dcu="docker-compose up"
+alias dcub="docker-compose up --build"

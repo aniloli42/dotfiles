@@ -18,7 +18,7 @@ font:
     family: Source Code Pro
     style: Bold Italic
 
-  size: 11
+  size: 12
 
 window:
   dynamic_title: true

@@ -29,3 +29,7 @@ esac
 
 export DENO_INSTALL="/home/amiuser/.deno"
 export PATH="$DENO_INSTALL/bin:$PATH"
+
+# bun
+export BUN_INSTALL="$HOME/.bun"
+export PATH=$BUN_INSTALL/bin:$PATH

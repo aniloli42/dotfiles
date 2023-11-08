@@ -5,6 +5,9 @@ alias rf='rm -rf'
 
 alias c='clear'
 
+# nvim
+alias nv='nvim -d'
+
 # Git Aliases
 alias gs='git status'
 alias gc='git commit -m'

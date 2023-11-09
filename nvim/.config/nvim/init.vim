@@ -8,11 +8,8 @@ set smartindent
 
 colorscheme habamax  
 
-
 let mapleader = " "
 
-nnoremap <leader>pv :Vex<CR>
-nnoremap <leader><CR> :so ~/.vimrc<CR>
-
-
-
+nnoremap <leader>v :Vex<CR>
+nnoremap <leader><CR> :so <CR>
+inoremap jk <esc>

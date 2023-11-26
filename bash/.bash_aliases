@@ -7,6 +7,7 @@ alias c='clear'
 
 # nvim
 alias nv='nvim -d'
+alias nvc="nvim ."
 
 # Git Aliases
 alias gs='git status'

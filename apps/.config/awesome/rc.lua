@@ -254,6 +254,8 @@ globalkeys = gears.table.join(
               {description = "focus the previous screen", group = "screen"}),
     awful.key({ modkey,           }, "u", awful.client.urgent.jumpto,
               {description = "jump to urgent client", group = "client"}),
+    awful.key({ modkey, }, "e", function () awful.spawn.with_shell('thunar') end,
+            {description = "Launch File manager", group = "screen"}),
     awful.key({ "Control", }, "m", function () awful.spawn.with_shell("/home/amiuser/.dotfiles/configs/monitor.sh") end,
             {description = "Change the dual monitor layout", group = "screen"}),
     awful.key({ modkey,           }, "Tab",

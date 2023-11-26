@@ -3,6 +3,7 @@ window:
   decorations: none
 
 font:
+  size: 14.0
   normal:
     family: Fira Code Nerd Font Mono
     style: ExtraLight

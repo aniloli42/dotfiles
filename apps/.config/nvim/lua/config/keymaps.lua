@@ -3,7 +3,7 @@ local opts = { noremap = true, silent = true }
 
 -- Directory Navigation
 map.set("n", "<leader>m", ":NvimTreeFocus<CR>", opts)
-map.set("n", "<leader>f", ":NvimTreeToggle<CR>", opts)
+map.set("n", "<leader>fo", ":NvimTreeToggle<CR>", opts)
 
 -- Pane Navigation
 map.set("n", "<C-h>", "<C-w>h", opts) -- Navigate Left
@@ -16,3 +16,7 @@ map.set("n", "<leader>sv", ":vsplit<CR>", opts) -- Vertical Split
 map.set("n", "<leader>sh", ":split<CR>", opts) -- Horizontal Split
 map.set("n", "<leader>q", ":q<CR>", opts) -- Quit Window
 map.set("n", "<leader>w", ":w<CR>", opts) -- Save Buffer
+
+-- Indenting
+map.set("v", "<", "<gv")
+map.set("v", ">", ">gv")

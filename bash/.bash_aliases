@@ -9,6 +9,9 @@ alias c='clear'
 alias nv='nvim -d'
 alias nvc="nvim ."
 
+# Bluetooth
+alias bac='bash ~/.dotfiles/configs/bluetooth-autoconnect.sh'
+
 # Git Aliases
 alias gs='git status'
 alias gc='git commit -m'

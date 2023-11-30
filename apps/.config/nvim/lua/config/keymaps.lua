@@ -3,7 +3,7 @@ local opts = { noremap = true, silent = true }
 
 -- Directory Navigation
 map.set("n", "<leader>m", ":NvimTreeFocus<CR>", opts)
-map.set("n", "<leader>fo", ":NvimTreeToggle<CR>", opts)
+map.set("n", "<leader>e", ":NvimTreeToggle<CR>", opts)
 
 -- Pane Navigation
 map.set("n", "<C-h>", "<C-w>h", opts) -- Navigate Left

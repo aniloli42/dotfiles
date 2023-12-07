@@ -83,8 +83,6 @@ screen.connect_signal("request::desktop_decoration", function(s)
               },
               {
                   wibox.widget.base.make_widget(),
-                  forced_height = dpi(2),
-                  stretch       = false,
                   id            = 'background_role',
                   widget        = wibox.container.background,
               },

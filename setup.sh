@@ -4,14 +4,11 @@ stage="$1"
 echo "Setuping configs..."
 
 function symlinking () {
-  echo "Symlinking: git"
   stow -R git
-
-  echo "Symlinking: bash"
   stow -R bash
-
-  echo "Symlinking: apps"
-  stow -R apps
+  stow -R awesome
+  stow -R alacritty
+  stow -R nvim
 }
 
 

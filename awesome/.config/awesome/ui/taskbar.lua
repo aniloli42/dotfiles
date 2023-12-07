@@ -1,12 +1,14 @@
 local awful = require("awful")
 local wibox = require("wibox")
 
-mykeyboardlayout = awful.widget.keyboardlayout()
-mytextclock = wibox.widget.textclock()
+-- mykeyboardlayout = awful.widget.keyboardlayout()
+mytextclock = wibox.widget {
+  format = '%a %b %e, %Y %I:%M %p',
+  widget = wibox.widget.textclock
+}
 
 screen.connect_signal("request::desktop_decoration", function(s)
-    -- Each screen has its own tag table.
-    awful.tag({ "1", "2", "3", "4", "5", "6", "7", "8", "9" }, s, awful.layout.layouts[1])
+    awful.tag({ "1", "2", "3" }, s, awful.layout.layouts[1])
 
     -- Create a promptbox for each screen
     s.mypromptbox = awful.widget.prompt()
@@ -67,17 +69,17 @@ screen.connect_signal("request::desktop_decoration", function(s)
             layout = wibox.layout.align.horizontal,
             { -- Left widgets
                 layout = wibox.layout.fixed.horizontal,
-                mylauncher,
+                -- mylauncher,
+                s.mylayoutbox,
                 s.mytaglist,
                 s.mypromptbox,
             },
             s.mytasklist, -- Middle widget
             { -- Right widgets
                 layout = wibox.layout.fixed.horizontal,
-                mykeyboardlayout,
+                -- mykeyboardlayout,
                 wibox.widget.systray(),
                 mytextclock,
-                s.mylayoutbox,
             },
         }
     }

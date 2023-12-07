@@ -20,6 +20,7 @@ modkey = "Mod4"
 
 
 -- {{{ Imports 
+require("config.autostart")
 require("config.rules")
 require("config.keybinds")
 require("config.notification")

@@ -77,7 +77,7 @@ screen.connect_signal("request::desktop_decoration", function(s)
                   {
                       id     = 'clienticon',
                       widget = awful.widget.clienticon,
-                      forced_height = dpi(34)
+                      forced_height = dpi(27)
                   },
                   widget  = wibox.container.place,
               },
@@ -101,7 +101,7 @@ screen.connect_signal("request::desktop_decoration", function(s)
         ontop   = true,
         stretch = false,
         margins = dpi(2),
-        height = dpi(38),
+        height = dpi(32),
         width = s.geometry.width - dpi(10),
         bg = "#092635",
         fg = "#9EC8B9",

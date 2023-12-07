@@ -1,20 +1,35 @@
 local awful = require("awful")
 local wibox = require("wibox")
+local beautiful = require("beautiful")
+local xresources = require("beautiful.xresources")
+local dpi = xresources.apply_dpi
 
 -- mykeyboardlayout = awful.widget.keyboardlayout()
-mytextclock = wibox.widget {
-  format = '%a %b %e, %Y %I:%M %p',
-  widget = wibox.widget.textclock
+local mytextclock = wibox.widget {
+  format = '%A %I:%M %p',
+  widget = wibox.widget.textclock,
+  -- font = beautiful.font_name .. " Bold 12",
+  align = "center"
+}
+
+beautiful.useless_gap = dpi(2)
+
+local systray = wibox.widget.systray()
+systray:set_base_size (dpi(27))
+
+local tasklist_buttons = {
+            awful.button({ }, 1, function (c)
+                c:activate { context = "tasklist", action = "toggle_minimization" }
+            end),
+            awful.button({ }, 3, function() awful.menu.client_list { theme = { width = 250 } } end),
+            awful.button({ }, 4, function() awful.client.focus.byidx(-1) end),
+            awful.button({ }, 5, function() awful.client.focus.byidx( 1) end),
 }
 
 screen.connect_signal("request::desktop_decoration", function(s)
     awful.tag({ "1", "2", "3" }, s, awful.layout.layouts[1])
 
-    -- Create a promptbox for each screen
     s.mypromptbox = awful.widget.prompt()
-
-    -- Create an imagebox widget which will contain an icon indicating which layout we're using.
-    -- We need one layoutbox per screen.
     s.mylayoutbox = awful.widget.layoutbox {
         screen  = s,
         buttons = {
@@ -51,35 +66,56 @@ screen.connect_signal("request::desktop_decoration", function(s)
     s.mytasklist = awful.widget.tasklist {
         screen  = s,
         filter  = awful.widget.tasklist.filter.currenttags,
-        buttons = {
-            awful.button({ }, 1, function (c)
-                c:activate { context = "tasklist", action = "toggle_minimization" }
-            end),
-            awful.button({ }, 3, function() awful.menu.client_list { theme = { width = 250 } } end),
-            awful.button({ }, 4, function() awful.client.focus.byidx(-1) end),
-            awful.button({ }, 5, function() awful.client.focus.byidx( 1) end),
-        }
-    }
+        buttons =  tasklist_buttons,
+        widget_template = {
+              {
+                  wibox.widget.base.make_widget(),
+                  forced_height = dpi(5),
+                  id            = 'background_role',
+                  widget        = wibox.container.background,
+              },
+              {
+                  {
+                      id     = 'clienticon',
+                      widget = awful.widget.clienticon,
+                      forced_height = dpi(27)
+                  },
+                  widget  = wibox.container.place
+              },
+              nil,
+              create_callback = function(self, c)
+                  self:get_children_by_id('clienticon')[1].client = c
+              end,
+              layout = wibox.layout.align.vertical,
+          },
+  }
 
     -- Create the wibox
     s.mywibox = awful.wibar {
         position = "top",
         screen   = s,
+        ontop   = true,
+        stretch = false,
+        margins = dpi(2),
+        height = dpi(38),
+        width = s.geometry.width - dpi(10),
+        bg = "#092635",
+        fg = "#9EC8B9",
+
         widget   = {
             layout = wibox.layout.align.horizontal,
-            { -- Left widgets
+            {
                 layout = wibox.layout.fixed.horizontal,
-                -- mylauncher,
-                s.mylayoutbox,
                 s.mytaglist,
                 s.mypromptbox,
+                s.mytasklist,
             },
-            s.mytasklist, -- Middle widget
-            { -- Right widgets
-                layout = wibox.layout.fixed.horizontal,
-                -- mykeyboardlayout,
-                wibox.widget.systray(),
-                mytextclock,
+             mytextclock,
+            {
+              widget = wibox.container.place,
+              {
+                widget = systray
+              }
             },
         }
     }

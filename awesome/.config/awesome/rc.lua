@@ -18,7 +18,6 @@ editor = os.getenv("EDITOR") or "nvim"
 editor_cmd = terminal .. " -e " .. editor
 modkey = "Mod4"
 
-
 -- {{{ Imports 
 require("config.autostart")
 require("config.rules")

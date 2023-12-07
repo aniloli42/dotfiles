@@ -67,20 +67,26 @@ screen.connect_signal("request::desktop_decoration", function(s)
         screen  = s,
         filter  = awful.widget.tasklist.filter.currenttags,
         buttons =  tasklist_buttons,
+        layout = {
+            spacing = dpi(4),
+            layout = wibox.layout.fixed.horizontal
+        },
         widget_template = {
-              {
-                  wibox.widget.base.make_widget(),
-                  forced_height = dpi(5),
-                  id            = 'background_role',
-                  widget        = wibox.container.background,
-              },
+
               {
                   {
                       id     = 'clienticon',
                       widget = awful.widget.clienticon,
-                      forced_height = dpi(27)
+                      forced_height = dpi(34)
                   },
-                  widget  = wibox.container.place
+                  widget  = wibox.container.place,
+              },
+              {
+                  wibox.widget.base.make_widget(),
+                  forced_height = dpi(2),
+                  stretch       = false,
+                  id            = 'background_role',
+                  widget        = wibox.container.background,
               },
               nil,
               create_callback = function(self, c)

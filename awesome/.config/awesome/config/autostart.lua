@@ -10,7 +10,7 @@ autostart("nm-applet")
 autostart("blueman-applet")
 
 -- Transparent Window View
-autostart("picom")
+-- autostart("picom")
 
 -- {{{ Display Power Management
 autostart("xset s off")

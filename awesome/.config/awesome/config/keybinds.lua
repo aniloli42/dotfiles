@@ -41,6 +41,10 @@ awful.keyboard.append_global_keybindings({
               {description = "run prompt", group = "launcher"}),
     awful.key({ modkey }, "p", function() menubar.show() end,
               {description = "show the menubar", group = "launcher"}),
+    awful.key({ modkey }, "e", function() awful.spawn.with_shell('thunar') end,
+              {description = "open a thunar", group = "launcher"}),
+    awful.key({ modkey }, "b", function() awful.spawn.with_shell('google-chrome-stable') end,
+              {description = "open a chrome", group = "launcher"}),
 })
 
 -- Tags related keybindings

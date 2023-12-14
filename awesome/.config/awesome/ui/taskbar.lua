@@ -12,10 +12,27 @@ local mytextclock = wibox.widget {
   align = "center"
 }
 
+-- Battery
+battery = require("config.battery")
+
+battery_widget = wibox.widget.textbox()
+battery_widget:set_align("right")
+battery_closure = battery.closure()
+
+function battery_update()
+    battery_widget:set_text(" " .. battery_closure() .. " ")
+end
+
+battery_update()
+battery_timer = timer({ timeout = 10 })
+battery_timer:connect_signal("timeout", battery_update)
+battery_timer:start()
+--
+
 beautiful.useless_gap = dpi(2)
 
 local systray = wibox.widget.systray()
-systray:set_base_size (dpi(27))
+systray:set_base_size (dpi(24))
 
 local tasklist_buttons = {
             awful.button({ }, 1, function (c)
@@ -113,12 +130,15 @@ screen.connect_signal("request::desktop_decoration", function(s)
                 s.mypromptbox,
                 s.mytasklist,
             },
-             mytextclock,
+                mytextclock,
             {
-              widget = wibox.container.place,
-              {
-                widget = systray
-              }
+                widget = wibox.container.place,
+                height = dpi(24),
+                    {
+                        layout = wibox.layout.fixed.horizontal,
+                        systray,
+                        battery_widget
+                    }
             },
         }
     }

@@ -17,7 +17,7 @@ awful.mouse.append_global_mousebindings({
 
 -- General Awesome keys
 awful.keyboard.append_global_keybindings({
-    awful.key({ modkey,           }, "s",      hotkeys_popup.show_help,
+  awful.key({ modkey,           }, "s",      hotkeys_popup.show_help,
               {description="show help", group="awesome"}),
     awful.key({ modkey,           }, "w", function () mymainmenu:show() end,
               {description = "show main menu", group = "awesome"}),
@@ -45,6 +45,14 @@ awful.keyboard.append_global_keybindings({
               {description = "open a thunar", group = "launcher"}),
     awful.key({ modkey }, "b", function() awful.spawn.with_shell('google-chrome-stable') end,
               {description = "open a chrome", group = "launcher"}),
+})
+
+-- System Power Related Keybindings
+awful.keyboard.append_global_keybindings({
+    awful.key({modkey, "Shift" }, "s", function () awful.spawn.with_shell("systemctl suspend") end,
+              {descirption = "enable sleep mode", group = "launcher" }),
+    awful.key({modkey, "Alt" }, "s", function () awful.spawn.with_shell("poweroff") end,
+              {descirption = "shutdown", group = "launcher" })
 })
 
 -- Tags related keybindings

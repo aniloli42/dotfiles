@@ -51,7 +51,7 @@ awful.keyboard.append_global_keybindings({
 awful.keyboard.append_global_keybindings({
     awful.key({modkey, "Shift" }, "s", function () awful.spawn.with_shell("systemctl suspend") end,
               {descirption = "enable sleep mode", group = "launcher" }),
-    awful.key({modkey, "Alt" }, "s", function () awful.spawn.with_shell("poweroff") end,
+    awful.key({modkey, "Control" }, "s", function () awful.spawn.with_shell("poweroff") end,
               {descirption = "shutdown", group = "launcher" })
 })
 

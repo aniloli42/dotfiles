@@ -6,7 +6,8 @@ local dpi = xresources.apply_dpi
 
 -- mykeyboardlayout = awful.widget.keyboardlayout()
 local mytextclock = wibox.widget {
-  format = '%A %I:%M %p · %Y/%m/%d ',
+  format = '%A %I:%M:%S %p · %Y/%m/%d',
+  refresh = 1,
   widget = wibox.widget.textclock,
   align = "center"
 }

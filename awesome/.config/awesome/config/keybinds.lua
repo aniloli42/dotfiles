@@ -45,6 +45,8 @@ awful.keyboard.append_global_keybindings({
               {description = "open a thunar", group = "launcher"}),
     awful.key({ modkey }, "b", function() awful.spawn.with_shell('google-chrome-stable') end,
               {description = "open a chrome", group = "launcher"}),
+    awful.key({ modkey }, "c", function() awful.spawn.with_shell('code') end,
+              {description = "open visual studio code", group = "launcher"}),
 })
 
 -- System Power Related Keybindings

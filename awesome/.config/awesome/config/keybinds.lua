@@ -59,9 +59,9 @@ awful.keyboard.append_global_keybindings({
 
 -- Volume Controls
 awful.keyboard.append_global_keybindings({
-  awful.key({}, "XF86AudioRaiseVolume", function () awful.util.spawn("amixer -D pulse sset Master 5%+", false) end),
-  awful.key({}, "XF86AudioLowerVolume", function () awful.util.spawn("amixer -D pulse sset Master 5%-", false) end),
-  awful.key({}, "XF86AudioMute", function () awful.util.spawn("amixer -D pulse sset Master toggle", false) end),
+  awful.key({}, "XF86AudioRaiseVolume", function () awful.util.spawn("pamixer -i 5", false) end),
+  awful.key({}, "XF86AudioLowerVolume", function () awful.util.spawn("pamixer -d 5", false) end),
+  awful.key({}, "XF86AudioMute", function () awful.util.spawn("pamixer -t", false) end),
 })
 
 -- Tags related keybindings

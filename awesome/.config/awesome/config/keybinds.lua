@@ -54,7 +54,9 @@ awful.keyboard.append_global_keybindings({
     awful.key({modkey, "Shift" }, "s", function () awful.spawn.with_shell("systemctl suspend") end,
               {descirption = "enable sleep mode", group = "launcher" }),
     awful.key({modkey, "Control" }, "s", function () awful.spawn.with_shell("poweroff") end,
-              {descirption = "shutdown", group = "launcher" })
+              {descirption = "shutdown", group = "launcher" }),
+    awful.key({modkey, "Shift" }, "m", function () awful.spawn.with_shell("bash ~/.dotfiles/scripts/monitor.sh") end,
+              {descirption = "set dual monitor properly", group = "launcher" })
 })
 
 -- Volume Controls

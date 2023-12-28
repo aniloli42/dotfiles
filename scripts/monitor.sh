@@ -2,7 +2,6 @@
 
 connected_monitors=$(xrandr | grep -E ' connected' | awk '{print $1}')
 
-
 if [[ "$connected_monitors" == *"HDMI-1"* ]]; then
   xrandr \
     --output eDP-1 \

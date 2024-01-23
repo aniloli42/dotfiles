@@ -2,22 +2,22 @@
 
 connected_monitors=$(xrandr | grep -E ' connected' | awk '{print $1}')
 
-if [[ "$connected_monitors" == *"HDMI-1"* ]]; then
+if [[ "$connected_monitors" == *"HDMI-A-0"* ]]; then
   xrandr \
-    --output eDP-1 \
+    --output eDP \
     --mode 1920x1080 \
     --rate 60 \
     --primary \
-    --output HDMI-1 \
+    --output HDMI-A-0 \
     --mode 1920x1080 \
     --rate 75 \
-    --left-of eDP-1
+    --left-of eDP
 else
     xrandr \
-      --output eDP-1 \
+      --output eDP \
       --mode 1920x1080 \
       --rate 60 \
       --primary \
-      --output HDMI-1 \
+      --output HDMI-A-0 \
       --off
 fi

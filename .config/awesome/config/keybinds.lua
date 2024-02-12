@@ -76,7 +76,7 @@ awful.keyboard.append_global_keybindings({
         awful.spawn.with_shell("shutdown 0")
     end, { descirption = "shutdown", group = "launcher" }),
     awful.key({ modkey, "Shift" }, "m", function()
-        awful.spawn.with_shell("~/.dotfiles/scripts/monitor.sh")
+        awful.spawn.with_shell("~/dotfiles/scripts/monitor.sh")
     end, { descirption = "set dual monitor properly", group = "launcher" }),
 })
 

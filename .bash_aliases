@@ -1,3 +1,7 @@
+#!/bin/bash
+
+alias code="codium"
+
 # Listing Aliases
 alias ll='ls -alF'
 alias l='ls -a'

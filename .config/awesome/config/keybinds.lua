@@ -62,9 +62,6 @@ awful.keyboard.append_global_keybindings({
     awful.key({ modkey }, "b", function()
         awful.spawn.with_shell("xdg-open https://google.com")
     end, { description = "open a browser", group = "launcher" }),
-    awful.key({ modkey }, "c", function()
-        awful.spawn.with_shell("code")
-    end, { description = "open visual studio code", group = "launcher" }),
 })
 
 -- System Power Related Keybindings

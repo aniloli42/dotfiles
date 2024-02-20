@@ -148,7 +148,6 @@ screen.connect_signal("request::desktop_decoration", function(s)
                 layout = wibox.layout.fixed.horizontal,
                 mytextclock,
                 s.mypromptbox,
-                s.mytasklist,
             },
             {
                 widget = wibox.container.place,
@@ -163,6 +162,7 @@ screen.connect_signal("request::desktop_decoration", function(s)
                 height = dpi(24),
                 {
                     layout = wibox.layout.fixed.horizontal,
+                    s.mytasklist,
                     systray,
                     battery_widget,
                 },

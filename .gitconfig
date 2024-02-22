@@ -6,3 +6,5 @@
 	email = 44222164+aniloli42@users.noreply.github.com
 [commit]
 	gpgsign = true
+[maintenance]
+	repo = /home/amiuser/dotfiles

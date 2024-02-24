@@ -9,6 +9,12 @@ alias rf='rm -rf'
 
 alias c='clear'
 
+alias '..'='cd ..'
+alias '...'='cd ../..'
+alias '....'='cd ../../../'
+alias '.....'='cd ../../../../'
+
+
 # nvim
 alias nv='nvim -d'
 alias nvc="nvim ."
@@ -29,6 +35,7 @@ alias ga='git add'
 alias gaa='git add -A'
 alias gb='git reset HEAD^'
 alias gpo='git push origin "$(git branch --show-current)"'
+alias gd='git diff'
 
 # Bash
 alias sb="source ~/.bashrc"

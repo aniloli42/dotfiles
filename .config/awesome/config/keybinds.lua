@@ -64,7 +64,7 @@ awful.keyboard.append_global_keybindings({
     end, { description = "open a browser", group = "launcher" }),
 })
 
--- System Power Related Keybindings
+-- System
 awful.keyboard.append_global_keybindings({
     awful.key({ modkey, "Shift" }, "s", function()
         awful.spawn.with_shell("systemctl suspend")
@@ -75,6 +75,9 @@ awful.keyboard.append_global_keybindings({
     awful.key({ modkey, "Shift" }, "m", function()
         awful.spawn.with_shell("~/dotfiles/scripts/monitor.sh")
     end, { descirption = "set dual monitor properly", group = "launcher" }),
+    awful.key({ modkey }, "c", function()
+        awful.spawn.with_shell("codium")
+    end, { descirption = "open vscodium", group = "launcher" }),
 })
 
 -- Volume Controls

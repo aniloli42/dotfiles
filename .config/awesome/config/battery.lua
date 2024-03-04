@@ -18,7 +18,9 @@ local function get_adapters()
     local found_adapters = {}
     local c = 1
     for i = 1, #adapters do
-        if file_exists("/sys/class/power_supply/" .. adapters[i] .. "/status") then
+        if
+            file_exists("/sys/class/power_supply/" .. adapters[i] .. "/status")
+        then
             found_adapters[c] = adapters[i]
             c = c + 1
         end
@@ -61,7 +63,7 @@ function battery.closure()
         local prefix = "⚡"
         local batteries = ""
         for i = 1, #adapters do
-            adapter = adapters[i]
+            local adapter = adapters[i]
             local battery, dir = get_bat_state(adapter)
             if dir == -1 then
                 prefix = "󰂁 "

@@ -108,6 +108,8 @@ screen.connect_signal("request::desktop_decoration", function(s)
     })
 
     -- Create a tasklist widget
+    beautiful.tasklist_bg_normal = "#092635"
+    beautiful.tasklist_bg_focus = "#cccccc"
     s.mytasklist = awful.widget.tasklist({
         screen = s,
         filter = awful.widget.tasklist.filter.currenttags,
@@ -117,24 +119,28 @@ screen.connect_signal("request::desktop_decoration", function(s)
             layout = wibox.layout.fixed.horizontal,
         },
         widget_template = {
-
+            layout = wibox.layout.align.vertical,
             {
-                {
-                    id = "clienticon",
-                    widget = awful.widget.clienticon,
-                },
                 widget = wibox.container.place,
+                forced_height = dpi(icon_size * 1.15),
+                {
+                    widget = wibox.container.place,
+                    forced_height = dpi(icon_size * 0.85),
+                    {
+                        id = "clienticon",
+                        layout = wibox.layout.fixed.horizontal,
+                        awful.widget.clienticon,
+                    },
+                },
             },
             {
-                wibox.widget.base.make_widget(),
                 id = "background_role",
                 widget = wibox.container.background,
+                wibox.widget.base.make_widget(),
             },
-            nil,
-            create_callback = function(self, c)
-                self:get_children_by_id("clienticon")[1].client = c
-            end,
-            layout = wibox.layout.align.vertical,
+            -- create_callback = function(self, c)
+            --   self:get_children_by_id("clienticon")[1].client = c
+            -- end,
         },
     })
 

@@ -7,7 +7,7 @@ local dpi = xresources.apply_dpi
 
 local base_size = 4
 local taskbar_height = base_size * 10
-local icon_size = taskbar_height / 1.25
+local icon_size = taskbar_height * 0.65
 local gap_size = base_size * 0.75
 
 beautiful.useless_gap = dpi(gap_size)
@@ -122,10 +122,10 @@ screen.connect_signal("request::desktop_decoration", function(s)
             layout = wibox.layout.align.vertical,
             {
                 widget = wibox.container.place,
-                forced_height = dpi(icon_size * 1.15),
+                forced_height = dpi(icon_size * 1.4),
                 {
                     widget = wibox.container.place,
-                    forced_height = dpi(icon_size * 0.85),
+                    forced_height = dpi(icon_size),
                     {
                         id = "clienticon",
                         layout = wibox.layout.fixed.horizontal,

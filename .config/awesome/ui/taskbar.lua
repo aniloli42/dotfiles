@@ -14,7 +14,7 @@ beautiful.useless_gap = dpi(gap_size)
 
 -- mykeyboardlayout = awful.widget.keyboardlayout()
 local mytextclock = wibox.widget({
-    format = "%b %d | %I:%M %p %a",
+    format = "%b %d | %I:%M:%S %p %a",
     refresh = 1,
     widget = wibox.widget.textclock,
     align = "left",

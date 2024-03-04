@@ -6,6 +6,7 @@
         "editor_cmd",
         "editor",
         "terminal",
-        "client"
+        "client",
+        "screen"
     ]
 }

@@ -12,7 +12,7 @@ naughty.connect_signal("request::display_error", function(message, startup)
     })
 end)
 
--- beautiful.init("~/.config/awesome/themes/gtk/theme.lua")
+beautiful.init("~/.config/awesome/themes/mytheme/theme.lua")
 
 terminal = "alacritty"
 editor = os.getenv("EDITOR") or "nvim"

@@ -30,8 +30,8 @@ local battery_closure = battery.closure()
 local function battery_update()
     battery_widget:set_text(" " .. battery_closure() .. " ")
 end
-
 battery_update()
+
 local battery_timer = timer({ timeout = 10 })
 battery_timer:connect_signal("timeout", battery_update)
 battery_timer:start()

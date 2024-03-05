@@ -57,7 +57,6 @@ screen.connect_signal("request::desktop_decoration", function(s)
 
     local mysystray = wibox.widget.systray()
     mysystray:set_base_size(dpi(icon_size))
-    beautiful.bg_systray = "#092635"
 
     s.mypromptbox = awful.widget.prompt()
     s.mylayoutbox = awful.widget.layoutbox({
@@ -108,8 +107,6 @@ screen.connect_signal("request::desktop_decoration", function(s)
     })
 
     -- Create a tasklist widget
-    beautiful.tasklist_bg_normal = "#092635"
-    beautiful.tasklist_bg_focus = "#cccccc"
     s.mytasklist = awful.widget.tasklist({
         screen = s,
         filter = awful.widget.tasklist.filter.currenttags,
@@ -163,8 +160,6 @@ screen.connect_signal("request::desktop_decoration", function(s)
         },
         height = dpi(taskbar_height),
         shape = rounded_rect(base_size),
-        bg = "#092635",
-        fg = "#9EC8B9",
 
         widget = {
             layout = wibox.layout.align.horizontal,

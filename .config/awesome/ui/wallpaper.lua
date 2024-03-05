@@ -5,7 +5,6 @@ local wibox = require("wibox")
 screen.connect_signal("request::wallpaper", function(s)
     awful.wallpaper({
         screen = s,
-        bg = "#223c49",
         widget = {
             {
                 image = beautiful.wallpaper,

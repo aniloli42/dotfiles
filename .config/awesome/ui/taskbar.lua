@@ -20,6 +20,21 @@ local mytextclock = wibox.widget({
     align = "left",
 })
 
+-- Sound
+local sound = require("config.sound")
+
+local sound_widget = wibox.widget.textbox()
+local sound_closure = sound.closure()
+
+local function update_volume()
+    sound_widget:set_text(sound_closure())
+end
+update_volume()
+
+local sound_timer = timer({ timeout = 1 })
+sound_timer:connect_signal("timeout", update_volume)
+sound_timer:start()
+
 -- Battery
 local battery = require("config.battery")
 
@@ -28,11 +43,11 @@ battery_widget:set_align("right")
 local battery_closure = battery.closure()
 
 local function battery_update()
-    battery_widget:set_text(" " .. battery_closure() .. " ")
+    battery_widget:set_text(battery_closure())
 end
 battery_update()
 
-local battery_timer = timer({ timeout = 10 })
+local battery_timer = timer({ timeout = 1 })
 battery_timer:connect_signal("timeout", battery_update)
 battery_timer:start()
 --
@@ -194,6 +209,7 @@ screen.connect_signal("request::desktop_decoration", function(s)
                             mysystray,
                         },
                     },
+                    sound_widget,
                     battery_widget,
                 },
             },

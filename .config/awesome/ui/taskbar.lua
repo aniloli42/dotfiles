@@ -7,7 +7,7 @@ local dpi = xresources.apply_dpi
 
 local base_size = 4
 local taskbar_height = base_size * 10
-local icon_size = taskbar_height * 0.65
+local icon_size = taskbar_height * 0.6
 local gap_size = base_size * 0.75
 
 beautiful.useless_gap = dpi(gap_size)

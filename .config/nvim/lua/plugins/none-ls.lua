@@ -5,12 +5,12 @@ return {
 
 		null_ls.setup({
 			sources = {
-        -- formatting
+				-- formatting
 				null_ls.builtins.formatting.stylua,
 				null_ls.builtins.formatting.prettier,
 
-        -- diagnostics
-        null_ls.builtins.diagnostics.eslint_d,
+				-- diagnostics
+				null_ls.builtins.diagnostics.eslint,
 				null_ls.builtins.diagnostics.codespell,
 			},
 		})

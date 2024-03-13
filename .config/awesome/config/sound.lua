@@ -9,7 +9,7 @@ end
 
 local function get_volume_status()
     local volume = execute_cmd(
-        "pactl get-sink-volume $(pactl get-default-sink) | awk -F'[/,]' '{print $5}'"
+        "pactl get-sink-volume $(pactl get-default-sink) | awk -F'[/,]' '{print $2}'"
     )
 
     local mute_status = execute_cmd(

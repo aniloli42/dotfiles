@@ -45,20 +45,19 @@ sound_timer:connect_signal("timeout", update_volume)
 sound_timer:start()
 
 -- Battery
-local battery = require("config.battery")
-
 local battery_widget = wibox.widget.textbox()
 battery_widget:set_align("right")
-local battery_closure = battery.closure()
 
+local battery = require("config.battery")
+local battery_closure = battery.closure()
 local function battery_update()
     battery_widget:set_text(battery_closure())
 end
-battery_update()
 
 local battery_timer = timer({ timeout = 1 })
 battery_timer:connect_signal("timeout", battery_update)
 battery_timer:start()
+battery_update()
 --
 
 local tasklist_buttons = {

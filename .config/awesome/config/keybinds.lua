@@ -93,6 +93,16 @@ awful.keyboard.append_global_keybindings({
     end),
 })
 
+-- Brightness Control
+awful.keyboard.append_global_keybindings({
+    awful.key({}, "XF86MonBrightnessUp", function()
+        awful.util.spawn("brightnessctl set +10%", false)
+    end),
+    awful.key({}, "XF86MonBrightnessDown", function()
+        awful.util.spawn("brightnessctl set 10%-", false)
+    end),
+})
+
 -- Tags related keybindings
 awful.keyboard.append_global_keybindings({
     awful.key(

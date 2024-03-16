@@ -1,5 +1,3 @@
-local sound = {}
-
 local function execute_cmd(command)
     local file = io.popen(command)
     local output = file:read("*all")
@@ -19,12 +17,4 @@ local function get_volume_status()
     return mute_status:gsub("%s+", "") == "no" and "🔊" .. volume or "🔇"
 end
 
-get_volume_status()
-
-function sound.closure()
-    return function()
-        return get_volume_status()
-    end
-end
-
-return sound
+return get_volume_status

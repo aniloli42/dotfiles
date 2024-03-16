@@ -21,8 +21,6 @@ local mytextclock = wibox.widget({
 })
 
 -- Sound
-local sound = require("config.sound")
-
 local sound_widget = wibox.widget.textbox()
 sound_widget:buttons({
     awful.button({}, 1, function()
@@ -36,9 +34,9 @@ sound_widget:buttons({
     end),
 })
 
-local sound_closure = sound.closure()
+local sound_level = require("config.sound")
 local function update_volume()
-    sound_widget:set_text(sound_closure())
+    sound_widget:set_text(sound_level())
 end
 update_volume()
 

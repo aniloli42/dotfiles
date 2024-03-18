@@ -101,12 +101,12 @@ local function notify_current_brightness()
   local current_brightness = execute_cmd("brightnessctl get")
   local max_brightness = execute_cmd("brightnessctl max")
 
+  local brightness = "Brightness: "
+      .. math.ceil((current_brightness / max_brightness) * 100)
+      .. "%"
+
   naughty.destroy_all_notifications()
-  naughty.notify({
-    text = "Brightness: " .. math.ceil(
-      (current_brightness / max_brightness) * 100
-    ) .. "%",
-  })
+  notify = naughty.notify({ text = brightness })
 end
 
 awful.keyboard.append_global_keybindings({

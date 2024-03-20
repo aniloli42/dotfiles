@@ -18,6 +18,10 @@ return {
 			filesystem = {
 				hijack_netrw_behavior = "open_default",
 				use_libuv_file_watcher = true,
+				follow_current_file = {
+					enabled = true,
+					leave_dirs_open = false,
+				},
 				filtered_items = {
 					hide_dotfiles = false,
 					hide_gitignored = false,

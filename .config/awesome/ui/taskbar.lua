@@ -36,7 +36,8 @@ sound_widget:buttons({
 
 local sound_level = require("config.sound")
 local function update_volume()
-  sound_widget:set_text(sound_level())
+    local volume, icon = sound_level()
+    sound_widget:set_text(" " .. icon .. " " .. volume .. " ")
 end
 update_volume()
 

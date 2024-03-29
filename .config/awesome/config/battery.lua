@@ -66,12 +66,12 @@ function battery.closure()
             local adapter = adapters[i]
             local battery, dir = get_bat_state(adapter)
             if dir == -1 then
-                prefix = "󰂁 "
+                prefix = "󰂁"
             end
             battery = battery .. "%"
             batteries = batteries .. " " .. battery .. " "
         end
-        return prefix .. "" .. batteries:gsub("%s+$", "")
+        return prefix .. batteries:gsub("%s+$", "")
     end
 end
 

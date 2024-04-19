@@ -1,23 +1,25 @@
 #!/bin/bash
 
 connected_monitors=$(xrandr | grep -E ' connected' | awk '{print $1}')
+laptop_monitor=eDP-1
+external_monitor=HDMI-1
 
-if [[ "$connected_monitors" == *"HDMI-1"* ]]; then
+if [[ "$connected_monitors" == *"$external_montior"* ]]; then
   xrandr \
-    --output eDP-1 \
+    --output $laptop_monitor \
     --mode 1920x1080 \
     --rate 60 \
     --primary \
-    --output HDMI-1 \
+    --output $external_monitor \
     --mode 1920x1080 \
     --rate 75 \
-    --left-of eDP-1
+    --left-of $laptop_monitor
 else
     xrandr \
-      --output eDP-1 \
+      --output $laptop_monitor \
       --mode 1920x1080 \
       --rate 60 \
       --primary \
-      --output HDMI-1 \
+      --output $external_monitor \
       --off
 fi

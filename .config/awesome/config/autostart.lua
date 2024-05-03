@@ -10,7 +10,5 @@ autostart("nm-applet")
 autostart("blueman-applet")
 
 -- {{{ Display Power Management
-autostart("xset s off")
-autostart("xset -dmps")
-autostart("xset s noblank")
+autostart("xset s off -dpms")
 -- }}}

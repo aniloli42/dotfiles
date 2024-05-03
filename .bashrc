@@ -34,3 +34,11 @@ export PATH="$DENO_INSTALL/bin:$PATH"
 export BUN_INSTALL="$HOME/.bun"
 export PATH=$BUN_INSTALL/bin:$PATH
 
+# run tmux with condition where attach latest session if available
+if tmux ls >/dev/null 2>&1; then
+  if [[ -z "$TMUX" ]]; then
+    tmux a 
+  fi
+else
+  tmux
+fi

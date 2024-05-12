@@ -12,3 +12,7 @@ autostart("blueman-applet")
 -- {{{ Display Power Management
 autostart("xset s off -dpms")
 -- }}}
+
+-- {{{ Enable touch press in touchpad
+autostart("xinput set-prop 10 289 1")
+-- }}}

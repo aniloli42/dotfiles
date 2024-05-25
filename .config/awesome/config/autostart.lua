@@ -14,5 +14,5 @@ autostart("xset s off -dpms")
 -- }}}
 
 -- {{{ Enable touch press in touchpad
-autostart("xinput set-prop 10 288 1")
+autostart("~/dotfiles/scripts/touchpad_tapping_enable.sh")
 -- }}}

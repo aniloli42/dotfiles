@@ -104,6 +104,9 @@ awful.keyboard.append_global_keybindings({
     awful.key({}, "XF86AudioMute", function()
         awful.util.spawn("pamixer -t", false)
     end),
+    awful.key({}, "Print", function()
+        awful.util.spawn("flameshot gui", false)
+    end),
 })
 
 -- Brightness Control

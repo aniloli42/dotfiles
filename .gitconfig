@@ -8,3 +8,5 @@
 	gpgsign = true
 [maintenance]
 	repo = /home/amiuser/dotfiles
+[init]
+	defaultBranch = main

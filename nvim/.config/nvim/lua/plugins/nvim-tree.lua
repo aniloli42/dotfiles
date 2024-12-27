@@ -13,17 +13,9 @@ return {
         relativenumber = true,
       },
       -- change folder arrow icons
-      rendered = {
+      renderer = {
         indent_markers = {
           enable = true,
-        },
-        icons = {
-          glyphs = {
-            folder = {
-              arrow_closed = "",
-              arrow_open = "",
-            },
-          },
         },
       },
       -- disable window_picker for
@@ -48,9 +40,9 @@ return {
     -- set keymap
     local k = vim.keymap
 
-    k.set("n", "<leader>ee", "<cmd>NvimTreeToggle<CR>", { desc = "Toggle file explorer" })
-    k.set("n", "<leader>ef", "<cmd>NvimTreeFindFileToggle<CR>", { desc = "Toggle file explorer on current file"})
+    k.set("n", "<leader>ee", "<cmd>NvimTreeFindFileToggle<CR>", { desc = "Toggle file explorer on current file"})
     k.set("n", "<leader>ec", "<cmd>NvimTreeCollapse<CR>", { desc = "Collapse file explorer" })
     k.set("n", "<leader>er", "<cmd>NvimTreeRefresh<CR>", { desc = "Refresh file explorer" })
+    k.set("n", "<leader>ef", "<cmd>NvimTreeFocus<CR>", { desc = "Focus file explorer" })
   end
 }

@@ -21,3 +21,6 @@ k.set("n", "<leader>tx", "<cmd>tabclose<CR>", { desc = "Close current tab" })
 k.set("n", "<leader>tn", "<cmd>tabn<CR>", { desc = "Go to next tab" })
 k.set("n", "<leader>tp", "<cmd>tabp<CR>", { desc = "Go to previous tab" })
 k.set("n", "<leader>tf", "<cmd>tabnew %<CR>", { desc = "Open current buffer in new tab" })
+
+-- format whole file
+k.set("n", "<leader>ft", "<S-g><S-v>gg=<C-o><C-o>", { desc = "format whole file" })

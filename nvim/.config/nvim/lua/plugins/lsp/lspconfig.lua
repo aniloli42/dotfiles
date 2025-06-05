@@ -73,6 +73,7 @@ return {
     -- Change the Diagnostic symbols in the sign column (gutter)
     -- (not in youtube nvim video)
     vim.diagnostic.config({
+      virtual_text = true,
       signs = {
         text = {
           [vim.diagnostic.severity.ERROR] = " ",
@@ -80,25 +81,12 @@ return {
           [vim.diagnostic.severity.INFO] = "󰋼 ",
           [vim.diagnostic.severity.HINT] = "󰌵 ",
         },
-        texthl = {
-          [vim.diagnostic.severity.ERROR] = "Error",
-          [vim.diagnostic.severity.WARN] = "Error",
-          [vim.diagnostic.severity.HINT] = "Hint",
-          [vim.diagnostic.severity.INFO] = "Info",
-        },
-        numhl = {
-          [vim.diagnostic.severity.ERROR] = "",
-          [vim.diagnostic.severity.WARN] = "",
-          [vim.diagnostic.severity.HINT] = "",
-          [vim.diagnostic.severity.INFO] = "",
-        },
       },
     })
 
     mason_lspconfig.setup({
       -- default handler for installed servers
       handlers = {
-
         function(server_name)
           lspconfig[server_name].setup({
             capabilities = capabilities,

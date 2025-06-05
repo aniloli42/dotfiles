@@ -6,6 +6,9 @@ autostart("~/dotfiles/scripts/monitor.sh")
 -- Network manager
 autostart("nm-applet")
 
+-- Picom
+-- autostart("picom")
+
 -- Bluetooth Manager
 autostart("blueman-applet")
 

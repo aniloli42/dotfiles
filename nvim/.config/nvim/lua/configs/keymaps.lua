@@ -5,7 +5,6 @@ local k = vim.keymap
 k.set("i", "jk", "<ESC>", { desc = "Exit insert mode with jk" })
 k.set("n", "<leader>nh", ":nohl<CR>", { desc = "Clear search highlights" })
 
-
 -- increment/decrement numbers
 k.set("n", "<leader>+", "<C-a>", { desc = "Increment number" }) -- increment
 k.set("n", "<leader>-", "<C-x>", { desc = "Decrement number" }) -- decrement
@@ -23,4 +22,8 @@ k.set("n", "<leader>tp", "<cmd>tabp<CR>", { desc = "Go to previous tab" })
 k.set("n", "<leader>tf", "<cmd>tabnew %<CR>", { desc = "Open current buffer in new tab" })
 
 -- format whole file
-k.set("n", "<leader>ft", "<S-g><S-v>gg=<C-o><C-o>", { desc = "format whole file" })
+k.set("n", "<leader>fmt", "<S-g><S-v>gg=<C-o>", { desc = "format whole file" })
+
+-- close nvim
+k.set("n", "<leader>q", "<cmd>q<CR>", { desc = "close nvim" })
+k.set("n", "<leader><S-q>", "<cmd>wqa<CR>", { desc = "close nvim with save all" })

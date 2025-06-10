@@ -1,7 +1,7 @@
 local autostart = require("awful").spawn.with_shell
 
 -- Auto Align Monitors
-autostart("~/dotfiles/scripts/monitor.sh")
+-- autostart("~/dotfiles/scripts/monitor.sh")
 
 -- Network manager
 autostart("nm-applet")

@@ -17,6 +17,18 @@ require("lazy").setup({ { import = "plugins" }, { import = "plugins.lsp" } }, {
     notify = false,
   },
   change_detection = {
-    notify = false
-  }
+    notify = false,
+  },
+})
+
+vim.diagnostic.config({
+  virtual_text = true,
+  signs = {
+    text = {
+      [vim.diagnostic.severity.ERROR] = " ",
+      [vim.diagnostic.severity.WARN] = " ",
+      [vim.diagnostic.severity.INFO] = "󰋼 ",
+      [vim.diagnostic.severity.HINT] = "󰌵 ",
+    },
+  },
 })

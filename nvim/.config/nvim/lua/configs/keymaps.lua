@@ -1,29 +1,29 @@
 vim.g.mapleader = " "
 
-local k = vim.keymap
+local key = require("help")
 
-k.set("i", "jk", "<ESC>", { desc = "Exit insert mode with jk" })
-k.set("n", "<leader>nh", ":nohl<CR>", { desc = "Clear search highlights" })
+key("i", "jk", "<ESC>", { desc = "Exit insert mode with jk" })
+key("n", "<leader>nh", ":nohl<CR>", { desc = "Clear search highlights" })
 
 -- increment/decrement numbers
-k.set("n", "<leader>+", "<C-a>", { desc = "Increment number" }) -- increment
-k.set("n", "<leader>-", "<C-x>", { desc = "Decrement number" }) -- decrement
+key("n", "<leader>+", "<C-a>", { desc = "Increment number" }) -- increment
+key("n", "<leader>-", "<C-x>", { desc = "Decrement number" }) -- decrement
 
 -- window management
-k.set("n", "<leader>sv", "<C-w>v", { desc = "Split window vertically" })
-k.set("n", "<leader>sh", "<C-w>s", { desc = "Split window horizontally" })
-k.set("n", "<leader>se", "<C-w>=", { desc = "Make splits equal size" })
-k.set("n", "<leader>sx", "<cmd>close<CR>", { desc = "Close Current split" })
+key("n", "<leader>sv", "<C-w>v", { desc = "Split window vertically" })
+key("n", "<leader>sh", "<C-w>s", { desc = "Split window horizontally" })
+key("n", "<leader>se", "<C-w>=", { desc = "Make splits equal size" })
+key("n", "<leader>sx", "<cmd>close<CR>", { desc = "Close Current split" })
 
-k.set("n", "<leader>to", "<cmd>tabnew<CR>", { desc = "Open new tab" })
-k.set("n", "<leader>tx", "<cmd>tabclose<CR>", { desc = "Close current tab" })
-k.set("n", "<leader>tn", "<cmd>tabn<CR>", { desc = "Go to next tab" })
-k.set("n", "<leader>tp", "<cmd>tabp<CR>", { desc = "Go to previous tab" })
-k.set("n", "<leader>tf", "<cmd>tabnew %<CR>", { desc = "Open current buffer in new tab" })
+key("n", "<leader>to", "<cmd>tabnew<CR>", { desc = "Open new tab" })
+key("n", "<leader>tx", "<cmd>tabclose<CR>", { desc = "Close current tab" })
+key("n", "<leader>tn", "<cmd>tabn<CR>", { desc = "Go to next tab" })
+key("n", "<leader>tp", "<cmd>tabp<CR>", { desc = "Go to previous tab" })
+key("n", "<leader>tf", "<cmd>tabnew %<CR>", { desc = "Open current buffer in new tab" })
 
 -- format whole file
-k.set("n", "<leader>fmt", "<S-g><S-v>gg=<C-o>", { desc = "format whole file" })
+key("n", "<leader>fmt", "<S-g><S-v>gg=<C-o>", { desc = "format whole file" })
 
 -- close nvim
-k.set("n", "<leader>q", "<cmd>q<CR>", { desc = "close nvim" })
-k.set("n", "<leader><S-q>", "<cmd>wqa<CR>", { desc = "close nvim with save all" })
+key("n", "<leader>q", "<cmd>q<CR>", { desc = "close nvim" })
+key("n", "<leader><S-q>", "<cmd>wqa<CR>", { desc = "close nvim with save all" })

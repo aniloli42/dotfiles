@@ -9,6 +9,7 @@ if not vim.loop.fs_stat(lazypath) then
     lazypath,
   })
 end
+
 vim.opt.rtp:prepend(lazypath)
 
 require("lazy").setup({ { import = "plugins" }, { import = "plugins.lsp" } }, {
@@ -18,17 +19,5 @@ require("lazy").setup({ { import = "plugins" }, { import = "plugins.lsp" } }, {
   },
   change_detection = {
     notify = false,
-  },
-})
-
-vim.diagnostic.config({
-  virtual_text = true,
-  signs = {
-    text = {
-      [vim.diagnostic.severity.ERROR] = " ",
-      [vim.diagnostic.severity.WARN] = " ",
-      [vim.diagnostic.severity.INFO] = "󰋼 ",
-      [vim.diagnostic.severity.HINT] = "󰌵 ",
-    },
   },
 })

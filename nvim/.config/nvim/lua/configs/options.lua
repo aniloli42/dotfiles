@@ -11,15 +11,14 @@ opt.shiftwidth = 2 -- 2 spaces for indent width
 opt.expandtab = true -- expand tab to spaces
 opt.autoindent = true -- copy indent from current line when starting new one
 
-
-opt.wrap = false
+-- word wrapping set to true
+opt.wrap = true
 
 --serach settings
 opt.ignorecase = true
 opt.smartcase = true
 
 opt.cursorline = true
-
 
 -- turn on termguicolors
 opt.termguicolors = true

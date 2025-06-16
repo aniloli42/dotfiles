@@ -1,6 +1,6 @@
 vim.g.mapleader = " "
 
-local key = require("help")
+local key = require("utils.keymap")
 
 key("i", "jk", "<ESC>", { desc = "Exit insert mode with jk" })
 key("n", "<leader>nh", ":nohl<CR>", { desc = "Clear search highlights" })

@@ -23,7 +23,7 @@ return {
       end,
     })
 
-    local key = require("help")
+    local key = require("utils.keymap")
     key("n", "<leader>l", function()
       lint.try_lint()
     end, { desc = "Trigger linting for current file" })

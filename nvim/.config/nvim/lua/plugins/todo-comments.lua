@@ -6,7 +6,7 @@ return {
     local todo_comments = require("todo-comments")
 
     -- set keymaps
-    local key = require("help")
+    local key = require("utils.keymap")
 
     key("n", "]t", function()
       todo_comments.jump_next()

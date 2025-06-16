@@ -29,7 +29,8 @@ return {
       },
     })
 
-    vim.keymap.set({ "n", "v" }, "<leader>fmt", function()
+    local keymap = require("utils.keymap")
+    keymap({ "n", "v" }, "<leader>fmt", function()
       conform.format({
         lsp_fallback = true,
         async = false,

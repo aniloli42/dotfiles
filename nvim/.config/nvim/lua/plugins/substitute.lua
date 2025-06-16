@@ -6,7 +6,7 @@ return {
 
     substitute.setup()
 
-    local key = require("help")
+    local key = require("utils.keymap")
 
     key("n", "s", substitute.operator, { desc = "substitute with motion" })
     key("n", "ss", substitute.line, { desc = "substitute line" })

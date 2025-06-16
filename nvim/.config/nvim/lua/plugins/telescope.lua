@@ -27,7 +27,7 @@ return {
     telescope.load_extension("fzf")
 
     -- set keymaps
-    local key = require("help")
+    local key = require("utils.keymap")
     key("n", "<leader>ff", "<cmd>Telescope find_files<cr>", { desc = "Fuzzy find files in cwd" })
     key("n", "<leader>fr", "<cmd>Telescope oldfiles<cr>", { desc = "Fuzzy find recent files" })
     key("n", "<leader>fs", "<cmd>Telescope live_grep<cr>", { desc = "Find string in cwd" })

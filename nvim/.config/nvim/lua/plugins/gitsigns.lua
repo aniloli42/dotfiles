@@ -6,7 +6,7 @@ return {
       local gs = package.loaded.gitsigns
 
       local function map(mode, l, r, desc)
-        local key = require("help")
+        local key = require("utils.keymap")
         key(mode, l, r, { buffer = bufnr, desc = desc })
       end
 

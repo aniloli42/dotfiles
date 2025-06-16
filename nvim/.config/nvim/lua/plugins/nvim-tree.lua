@@ -37,7 +37,7 @@ return {
     })
 
     -- set keymap
-    local key = require("help")
+    local key = require("utils.keymap")
 
     key("n", "<leader>ee", "<cmd>NvimTreeFindFileToggle<CR>", { desc = "Toggle file explorer on current file" })
     key("n", "<leader>ec", "<cmd>NvimTreeCollapse<CR>", { desc = "Collapse file explorer" })

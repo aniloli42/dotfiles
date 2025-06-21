@@ -17,6 +17,12 @@ opt.termguicolors = true
 opt.background = "dark"
 opt.signcolumn = "yes"
 opt.backspace = "indent,eol,start"
-opt.clipboard:append("unnamedplus") -- system default clipboard
 opt.splitright = true
 opt.splitbelow = true
+opt.undofile = true
+opt.showmode = false
+
+-- system default clipboard
+vim.schedule(function()
+  opt.clipboard = "unnamedplus"
+end)

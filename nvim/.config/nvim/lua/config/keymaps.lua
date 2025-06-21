@@ -1,5 +1,3 @@
-vim.g.mapleader = " "
-
 local key = require("utils.keymap")
 
 key("i", "jk", "<ESC>", { desc = "Exit insert mode with jk" })

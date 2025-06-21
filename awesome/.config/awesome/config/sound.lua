@@ -8,7 +8,7 @@ local function get_volume_status()
     local mute_status = execute_cmd(
         "pactl get-sink-mute $(pactl get-default-sink) | cut -d' ' -f 2"
     )
-    local icon = mute_status:gsub("%s+", "") == "no" and "🔊" or "🔇"
+    local icon = mute_status:gsub("%s+", "") == "no" and "VOL" or "MUTED"
 
     return volume:gsub("%s+", ""), icon
 end

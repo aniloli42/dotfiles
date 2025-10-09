@@ -9,6 +9,9 @@
 [init]
   defaultBranch = main
 
+[merge]
+  ff=false
+
 [gpg]
   format = ssh
 

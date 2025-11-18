@@ -10,3 +10,6 @@ export PATH=$JAVA_HOME/bin:$PATH
 if command -v jenv &> /dev/null; then
   eval "$(jenv init -)"
 fi
+
+# include aliases
+source ~/.zsh_aliases

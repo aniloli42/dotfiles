@@ -1,5 +1,5 @@
 [user]
-  name = Anil Oli
+  name = Anil Oli <aniloli42>
   signingkey = ~/.ssh/id_ed25519.pub
   email = 44222164+aniloli42@users.noreply.github.com
 

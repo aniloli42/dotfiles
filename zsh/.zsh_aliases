@@ -17,3 +17,9 @@ alias gcb="git checkout"
 alias gcbn="git checkout -b"
 alias gbr="git branch -m"
 alias gbd="git branch -d"
+
+# nvim commands
+alias nvc="nvim ."
+alias vim="nvim"
+alias nv="nvim"
+

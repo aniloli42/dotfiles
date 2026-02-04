@@ -1,3 +1,4 @@
 [user]
+	name = Anil Oli <xmk16@txstate.edu>
 	signingkey = ~/.ssh/id_bitbucket.pub
-  email = xmk16@txstate.edu
+	email = xmk16@txstate.edu

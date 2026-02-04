@@ -13,3 +13,11 @@ fi
 
 # include aliases
 source ~/.zsh_aliases
+
+# pnpm
+export PNPM_HOME="/Users/amiuser/Library/pnpm"
+case ":$PATH:" in
+  *":$PNPM_HOME:"*) ;;
+  *) export PATH="$PNPM_HOME:$PATH" ;;
+esac
+# pnpm end

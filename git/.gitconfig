@@ -1,23 +1,23 @@
 [user]
-  name = Anil Oli <aniloli42>
-  signingkey = ~/.ssh/id_ed25519.pub
-  email = 44222164+aniloli42@users.noreply.github.com
+  name = Anil Oli
 
 [includeIf "hasconfig:remote.*.url:git@bitbucket.org:*/**"]
   path = ~/.gitconfig-bitbucket
+
+[includeIf "hasconfig:remote.*.url:git@github.com:*/**"]
+  path = ~/.gitconfig-github
 
 [init]
   defaultBranch = main
 
 [merge]
-  ff=false
+  ff = false
 
 [gpg]
   format = ssh
 
 [gpg "ssh"]
   allowedSignersFile = ~/.ssh/allowed_signers
-  program = ssh-keygen
 
 [commit]
   gpgsign = true

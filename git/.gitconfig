@@ -29,3 +29,5 @@
 	ignorecase = false
 [pull]
 	rebase = true
+[push]
+	autoSetupRemote = true

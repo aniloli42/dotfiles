@@ -4,6 +4,11 @@ export NVM_DIR="$HOME/.nvm"
 export PATH="/opt/homebrew/bin:$PATH"
 
 
+PROMPT=$'\n%F{cyan}%n (%d):%f\n%F{green}> %f'
+zle_highlight=(default:fg=yellow)
+preexec() { printf '\e[97m' }
+precmd()  { printf '\e[0m' }
+
 # include aliases
 source ~/.zsh_aliases
 

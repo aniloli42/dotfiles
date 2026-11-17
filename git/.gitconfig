@@ -27,3 +27,5 @@
 
 [core]
 	ignorecase = false
+[pull]
+	rebase = true
